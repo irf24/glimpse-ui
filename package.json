@@ -1,0 +1,17 @@
+{
+  "name": "@glimpse-ui/react",
+  "version": "0.0.1-placeholder",
+  "description": "Beautiful, high-performance skeleton placeholders for modern React apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "skeleton",
+    "loading",
+    "ui"
+  ],
+  "author": "Irfan",
+  "license": "MIT"
+}
