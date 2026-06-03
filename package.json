@@ -1,16 +1,39 @@
 {
   "name": "@glimpse-ui/react",
-  "version": "0.0.1-placeholder",
+  "version": "0.1.0",
   "description": "Beautiful, high-performance skeleton placeholders for modern React apps.",
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/glimpse-ui.umd.cjs",
+  "module": "./dist/glimpse-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/glimpse-ui.js",
+      "require": "./dist/glimpse-ui.umd.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "build:lib": "vite build",
+    "lint": "next lint"
   },
   "keywords": [
     "react",
     "skeleton",
     "loading",
-    "ui"
+    "placeholder",
+    "shimmer",
+    "ui",
+    "component"
   ],
   "author": "Irfan",
   "license": "MIT",
@@ -21,5 +44,23 @@
   "bugs": {
     "url": "https://github.com/irf24/glimpse-ui/issues"
   },
-  "homepage": "https://github.com/irf24/glimpse-ui#readme"
+  "homepage": "https://github.com/irf24/glimpse-ui#readme",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.17.6",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
+  }
 }

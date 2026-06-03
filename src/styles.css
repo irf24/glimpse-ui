@@ -1,0 +1,130 @@
+/* ============================================================
+   @glimpse-ui/react — Skeleton Placeholder Styles
+   GPU-accelerated animations · CSS variable theming
+   ============================================================ */
+
+/* ----- Theme Tokens (Light) ----- */
+:root {
+  --glimpse-base: hsl(220, 15%, 90%);
+  --glimpse-highlight: hsl(220, 15%, 96%);
+  --glimpse-radius: 8px;
+  --glimpse-duration: 1.8s;
+  --glimpse-pulse-duration: 1.6s;
+}
+
+/* ----- Theme Tokens (Dark — media query) ----- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glimpse-base: hsl(220, 15%, 18%);
+    --glimpse-highlight: hsl(220, 15%, 26%);
+  }
+}
+
+/* ----- Theme Tokens (Dark — class override) ----- */
+.dark,
+[data-theme="dark"] {
+  --glimpse-base: hsl(220, 15%, 18%);
+  --glimpse-highlight: hsl(220, 15%, 26%);
+}
+
+/* ----- Theme Tokens (Light — class override) ----- */
+.light,
+[data-theme="light"] {
+  --glimpse-base: hsl(220, 15%, 90%);
+  --glimpse-highlight: hsl(220, 15%, 96%);
+}
+
+/* ============================
+   Base
+   ============================ */
+.glimpse {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--glimpse-base);
+  border-radius: var(--glimpse-radius);
+  /* Prevent content collapse */
+  min-height: 1em;
+}
+
+/* ============================
+   Variants
+   ============================ */
+.glimpse--text {
+  height: 0.85em;
+  width: 100%;
+  border-radius: calc(var(--glimpse-radius) / 2);
+}
+
+.glimpse--circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.glimpse--rectangle {
+  width: 100%;
+  height: 120px;
+  border-radius: var(--glimpse-radius);
+}
+
+/* ============================
+   Shimmer Animation (GPU)
+   Pseudo-element slides across
+   via transform: translateX()
+   ============================ */
+.glimpse--shimmer {
+  isolation: isolate;
+}
+
+.glimpse--shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--glimpse-highlight) 40%,
+    var(--glimpse-highlight) 60%,
+    transparent 100%
+  );
+  animation: glimpse-shimmer var(--glimpse-duration) ease-in-out infinite;
+  /* Force GPU compositing layer */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@keyframes glimpse-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================
+   Pulse Animation
+   ============================ */
+.glimpse--pulse {
+  animation: glimpse-pulse var(--glimpse-pulse-duration) ease-in-out infinite;
+  will-change: opacity;
+}
+
+@keyframes glimpse-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ============================
+   No Animation
+   ============================ */
+.glimpse--none {
+  /* Static — no animation applied */
+}
