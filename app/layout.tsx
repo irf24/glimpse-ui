@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../src/styles.css";
 import "./globals.css";
+import "./components/DocLayout.css";
+import "./components/Navbar.css";
+import "./components/Sidebar.css";
+import "./components/ThemeToggle.css";
+import "./components/PlaygroundSection.css";
+import "./components/CodeBlock.css";
+import "./components/ApiReferenceSection.css";
+import "./components/ThemingSection.css";
+import "./components/InstallationSection.css";
+import "./components/AccessibilitySection.css";
+import "./components/OverviewSection.css";
 
 const inter = Inter({
   subsets: ["latin"],

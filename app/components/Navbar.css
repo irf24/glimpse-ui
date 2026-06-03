@@ -1,0 +1,92 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  background: var(--sand-glass);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--sand-glass-border);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--sand-text);
+  text-decoration: none;
+}
+
+.navbar__brand span {
+  background: linear-gradient(
+    135deg,
+    var(--sand-gradient-1),
+    var(--sand-gradient-2)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.navbar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--sand-border);
+  background: transparent;
+  color: var(--sand-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar__btn:hover {
+  background: var(--sand-surface-hover);
+  border-color: var(--sand-accent);
+}
+
+.navbar__github {
+  color: var(--sand-text-muted);
+  transition: color 0.2s;
+}
+
+.navbar__github:hover {
+  color: var(--sand-text);
+}
+
+.navbar__menu-btn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar__actions {
+    display: none;
+  }
+
+  .navbar__menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--sand-border);
+    color: var(--sand-text);
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}

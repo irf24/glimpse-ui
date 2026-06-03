@@ -1,0 +1,59 @@
+.api-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--sand-border);
+  border-radius: var(--sand-radius-sm);
+  background: var(--sand-glass);
+  margin-top: 1.5rem;
+}
+
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.api-table th,
+.api-table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--sand-border);
+}
+
+.api-table th {
+  background: hsla(225, 14%, 4%, 0.4);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sand-text-dim);
+}
+
+.api-table tr:last-child td {
+  border-bottom: none;
+}
+
+.api-table__prop-name {
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  color: var(--sand-text);
+  display: inline-flex;
+  align-items: center;
+}
+
+.api-table__prop-required {
+  font-size: 0.75rem;
+  color: hsl(0, 85%, 65%);
+  margin-left: 0.25rem;
+}
+
+.api-table__prop-type,
+.api-table__prop-default {
+  font-family: ui-monospace, monospace;
+  font-size: 0.82rem;
+  color: var(--sand-accent);
+}
+
+.api-table__prop-desc {
+  color: var(--sand-text-muted);
+  line-height: 1.5;
+}

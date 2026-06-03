@@ -1,0 +1,88 @@
+.code-block {
+  position: relative;
+  background: var(--code-bg);
+  border: 1px solid var(--sand-border);
+  border-radius: var(--sand-radius-sm);
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 1.25rem 0;
+  overflow: hidden;
+}
+
+.code-block__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: hsla(225, 14%, 4%, 0.4);
+  border-bottom: 1px solid var(--sand-border);
+  font-size: 0.75rem;
+  color: var(--sand-text-dim);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.code-block__copy {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  color: var(--sand-text-muted);
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.code-block__copy:hover {
+  background: var(--sand-surface-hover);
+  color: var(--sand-text);
+}
+
+.code-block__copy--copied {
+  color: hsl(140, 75%, 60%);
+  font-weight: 600;
+}
+
+.code-block__content {
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 0;
+  color: hsl(220, 15%, 85%);
+}
+
+.tok-keyword {
+  color: var(--code-keyword);
+  font-weight: 600;
+}
+
+.tok-string {
+  color: var(--code-string);
+}
+
+.tok-comment {
+  color: var(--code-comment);
+  font-style: italic;
+}
+
+.tok-tag {
+  color: var(--code-component);
+}
+
+.tok-attr {
+  color: var(--code-attr);
+}
+
+.tok-punctuation {
+  color: var(--code-punctuation);
+}
+
+.tok-builtin {
+  color: var(--code-builtin);
+}

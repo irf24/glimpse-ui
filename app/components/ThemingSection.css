@@ -1,0 +1,44 @@
+.theme-vars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .theme-vars-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.theme-var-card {
+  padding: 1rem 1.25rem;
+  background: var(--sand-surface);
+  border: 1px solid var(--sand-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.theme-var-name {
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--sand-accent);
+}
+
+.theme-var-desc {
+  font-size: 0.82rem;
+  color: var(--sand-text-muted);
+}
+
+.theme-var-default {
+  font-family: ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: var(--sand-text-dim);
+}
+
+.theming-section__spacing {
+  margin-top: 2rem;
+}
